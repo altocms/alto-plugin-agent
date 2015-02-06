@@ -88,6 +88,16 @@ class PluginAgent_ModuleAgent_EntityBrowser extends Entity {
         return $aBrowserInfo;
     }
 
+    public function name() {
+
+        return $this->aBrowsecap['name'];
+    }
+
+    public function version() {
+
+        return $this->aBrowsecap['version'];
+    }
+
     public function __get($sProperty) {
 
         if ($sProperty == 'name') {
