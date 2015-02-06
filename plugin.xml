@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin compatible="alto">
+    <id>agent</id>
+    <name>
+        <lang name="default">Agent Detector</lang>
+    </name>
+    <author>
+        <lang name="default">Vadim Shemarov (aka aVadim)</lang>
+    </author>
+    <homepage>http://altocms.com</homepage>
+    <version>1.0.0</version>
+    <dirname>agent</dirname>
+    <requires>
+        <alto>
+            <version>1.0.0</version>
+        </alto>
+        <system>
+            <php>5.3.0</php>
+        </system>
+    </requires>
+    <description>
+        <lang name="default">For detecting mobile devices and browsers</lang>
+    </description>
+</plugin>
