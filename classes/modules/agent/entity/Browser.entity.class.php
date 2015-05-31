@@ -40,12 +40,12 @@ class PluginAgent_ModuleAgent_EntityBrowser extends Entity {
 
     protected function _getBrowserInfo($sAgent = null) {
 
-        if (!$sAgent) {
+        if (!$sAgent && !empty($_SERVER['HTTP_USER_AGENT'])) {
             $sAgent = $_SERVER['HTTP_USER_AGENT'];
         }
         $aBrowserInfo = array();
         // регулярное выражение, которое позволяет отпределить 90% браузеров
-        if (preg_match('/(MSIE|Opera|Firefox|Chrome|Version|Opera Mini|Netscape|Konqueror|SeaMonkey|Camino|Minefield|Iceweasel|K-Meleon|Maxthon)(?:\/| )([0-9.]+)/', $sAgent, $aMatches)) {
+        if ($sAgent && preg_match('/(MSIE|Opera|Firefox|Chrome|Version|Opera Mini|Netscape|Konqueror|SeaMonkey|Camino|Minefield|Iceweasel|K-Meleon|Maxthon)(?:\/| )([0-9.]+)/', $sAgent, $aMatches)) {
             $aBrowserInfo['name'] = $sBrowser = $aMatches[1];
             $aBrowserInfo['version'] = $sVersion = $aMatches[2];
 
